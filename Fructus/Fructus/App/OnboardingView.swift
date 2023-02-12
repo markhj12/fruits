@@ -10,15 +10,14 @@ import SwiftUI
 struct OnboardingView: View {
     
     //MARK: PROPERTIES
+    var fruits: [Fruit] = fruitsData
     
     //MARK: BODY
     var body: some View {
         TabView {
-            ForEach(0..<5) { item in
-                FruitCardView()
+            ForEach(fruits[0...5]) { fruit in
+                FruitCardView(fruit: fruit)
             }
-
-
         } //: TAB
         .tabViewStyle(PageTabViewStyle())
         .padding(.vertical, 20)
