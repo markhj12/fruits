@@ -15,9 +15,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(fruits) { fruit in
-                    FruitRowView(fruit: fruit)
-                }
+                ForEach(fruits) { item in
+                    NavigationLink(destination: FruitDetailView(fruit: item)){
+                    FruitRowView(fruit: item)
+                        .padding(.vertical, 4)
+                    }
+               }
             }.navigationTitle("Fruits")
         }//:Navigation
     }
